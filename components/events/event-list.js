@@ -3,6 +3,11 @@ import classes from './event-list.module.css';
 
 function EventList(props) {
   const { events } = props;
+
+
+  if(!events) {
+    return <h1>Getting Data. Refresh if still showing after a few seconds.</h1>
+  }
   return (
     <ul className={classes.list}>
       {events.map((event) => (
